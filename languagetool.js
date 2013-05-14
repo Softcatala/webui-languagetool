@@ -11,7 +11,7 @@
 			$('#submit').click(function() {
 				doit();
 				return false;
-			}
+			});
 		});
 		
 		tinyMCE.init({

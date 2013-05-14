@@ -1,7 +1,8 @@
 <?php
+	
 	drupal_add_js("/languagetool/js/fancybox/jquery.fancybox-1.3.4.pack.js");
 	drupal_add_js("/languagetool/js/fancybox/jquery.fancybox-1.3.4.css"); 
-	drupal_add_js("/languagetool/online-check/tiny_mce/tiny_mce.js""); 
+	drupal_add_js("/languagetool/online-check/tiny_mce/tiny_mce.js"); 
 	drupal_add_js("/languagetool/online-check/tiny_mce/plugins/atd-tinymce/editor_plugin.js");
 	drupal_add_js("/languagetool/languagetool.js");
 ?>
