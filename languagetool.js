@@ -12,6 +12,18 @@
 				doit();
 				return false;
 			});
+			
+			$('#check_formes_generals').click(function() {
+				$('#opcions_valencia').hide();
+			});
+			
+			$('#check_formes_valencianes').click(function() {
+				$('#opcions_valencia').show();
+			});
+			
+			$('#check_formes_balears').click(function() {
+				$('#opcions_valencia').hide();
+			});
 		});
 		
 		tinyMCE.init({

@@ -33,9 +33,9 @@ Aquest corrector és una ajuda en la millora de la qualitat de textos en català
 			<input type="hidden" name="lang" value="ca"/>
 			<div style="margin-top:0px; margin-left: 30px; display:block; float: left;">
 				Formes 
-				<input type="radio" name="formes" value="formes_generals" checked onClick="document.getElementById('opcions_valencia').style.display='none';">generals
-				<input type="radio" name="formes" value="formes_valencianes" onClick="document.getElementById('opcions_valencia').style.display='';">valencianes
-				<input type="radio" name="formes" value="formes_balears" onClick="document.getElementById('opcions_valencia').style.display='none';">balears
+				<input type="radio" name="formes" value="formes_generals" checked id="check_formes_generals">generals
+				<input type="radio" name="formes" value="formes_valencianes" id="check_formes_valencianes">valencianes
+				<input type="radio" name="formes" value="formes_balears" id="check_formes_balears">balears
 			</div>
 
 			<div style="margin-top:0px; margin-left: 30px; display:block; float: left;">
