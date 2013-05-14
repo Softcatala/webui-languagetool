@@ -1,5 +1,5 @@
 body #checktextpara .mceEditor table td {
-	width: 99%;
+	width: auto;
 }
 
 p#checktextpara {
