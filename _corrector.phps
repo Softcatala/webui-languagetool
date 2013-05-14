@@ -29,7 +29,7 @@ Aquest corrector és una ajuda en la millora de la qualitat de textos en català
 			<textarea id="checktext" name="text" style="width: 100%" rows="6"></textarea>
 		</p>
 
-		<div style="margin-top:0px;position:relative;">
+		<div style="margin-top:2px;position:relative;">
 			<input type="hidden" name="lang" value="ca"/>
 			<div style="margin-top:0px; margin-left: 30px; display:block; float: left;">
 				Formes 

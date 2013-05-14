@@ -1,3 +1,8 @@
 body #checktextpara .mceEditor table td {
 	width: 680px;
 }
+
+#checktextpara {
+	position: relative;
+}
+
