@@ -12,4 +12,10 @@ p#checktextpara p {
 	float: none;
 }
 
+p#chectextpara table {
+	  margin: 10px 10px 10px 10px;
+	  width: 99%;
+	  display: table;
+	  float: none;
+}
 
