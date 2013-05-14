@@ -4,9 +4,14 @@
 				'titlePosition': 'inside'
 			});
 			
-			$("#mesopcions").click(click(function () {
+			$("#mesopcions").click(function () {
 				$("#mes_opcions").toggle(this.checked);
 			});
+			
+			$('#submit').click(function() {
+				doit();
+				return false;
+			}
 		});
 		
 		tinyMCE.init({

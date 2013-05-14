@@ -4,19 +4,15 @@
 	drupal_add_js("/languagetool/online-check/tiny_mce/tiny_mce.js"></script>
 	drupal_add_js("/languagetool/online-check/tiny_mce/plugins/atd-tinymce/editor_plugin.js");
 	drupal_add_js("/languagetool/languagetool.js");
-
-	$checkDefaultLang = "ca";
 ?>
 
 <form name="checkform" action="http://community.languagetool.org" method="post">
 	<p id="checktextpara">
-		<textarea id="checktext" name="text" style="width: 100%" rows="6">
-			<?php print $checkDefaultText ?>
-		</textarea>
+		<textarea id="checktext" name="text" style="width: 100%" rows="6"></textarea>
 	</p>
 
 	<div style="margin-top:0px;">
-		<input type="hidden" name="lang" value="<?php print $checkDefaultLang ?>"/>
+		<input type="hidden" name="lang" value="ca"/>
 		<div style="margin-top:0px; margin-left: 30px; display:block; float: left;">
 			Formes 
 			<input type="radio" name="formes" value="formes_generals" checked onClick="document.getElementById('opcions_valencia').style.display='none';">generals
@@ -58,7 +54,7 @@
 			</div>
 		</div>
 		<div style="margin-top:0px; display:block; float: right;">
-			<input type="submit" name="_action_checkText" value="<?php print $checkSubmitButtonValue ?>" onClick="doit();return false;">
+			<input type="submit" id="_action_checkText" name="_action_checkText" value="Comprova el text">
 		</div>
 	</div>
 
