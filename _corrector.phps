@@ -54,7 +54,7 @@
 			</div>
 		</div>
 		<div style="margin-top:0px; display:block; float: right;">
-			<input type="submit" id="_action_checkText" name="_action_checkText" value="Comprova el text">
+			<input type="submit" id="submit" name="_action_checkText" value="Comprova el text">
 		</div>
 	</div>
 
