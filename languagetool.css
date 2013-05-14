@@ -2,7 +2,14 @@ body #checktextpara .mceEditor table td {
 	width: 99%;
 }
 
-#checktextpara {
+p#checktextpara {
 	position: relative;
+	float: none;
+	clear: both;
 }
+
+p#checktextpara p {
+	float: none;
+}
+
 
