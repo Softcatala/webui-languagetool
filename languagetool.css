@@ -2,7 +2,7 @@ body #checktextpara .mceEditor table td {
 	width: auto;
 }
 
-body div#menu_checktext_spellcheckermenu table.menu_checktext_spellcheckermenu_tbl td {
+body div#menu_checktext_spellcheckermenu table#menu_checktext_spellcheckermenu_tbl td {
 	width: auto;
 }
 
