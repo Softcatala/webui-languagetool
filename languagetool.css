@@ -37,7 +37,6 @@ p#checktextpara table {
     background-image: url("images/squiggle_red.png");
     background-repeat: repeat-x;
     background-position: left bottom;
-    vertical-align: text-top;
     cursor: default;
 }
 
@@ -46,7 +45,6 @@ p#checktextpara table {
     background-image: url("images/squiggle.png");
     background-repeat: repeat-x;
     background-position: left bottom;
-    vertical-align: text-top;
     cursor: default;
 }
 
@@ -55,7 +53,6 @@ p#checktextpara table {
     background-image: url("images/squiggle_green.png");
     background-repeat: repeat-x;
     background-position: left bottom;
-    vertical-align: text-top;
     cursor: default;
 }
 
