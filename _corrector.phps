@@ -5,14 +5,30 @@
 	drupal_add_js("languagetool/online-check/tiny_mce/tiny_mce.js"); 
 	drupal_add_js("languagetool/online-check/tiny_mce/plugins/atd-tinymce/editor_plugin.js");
 	drupal_add_js("languagetool/languagetool.js");
+	drupal_add_css("languagetool/languagetool.css");
 ?>
 
+<p>
+Aquest servei permet trobar <span class="hiddenSpellError">errors ortogràfics</span>, <span class="hiddenGrammarError">errors gramaticals o tipogràfics</span>, <span class="hiddenGreenError">recomanacions d'estil</span>. 
+</p>
+<p>
+La variant de corrector «<strong>general</strong>» recull les opcions més comunes d'arreu del domini lingüístic, mentre que la de corrector «<strong>valencià</strong>» afegeix a l'anterior formes específiques valencianes, com ara certes accentuacions o terminacions nominals.
+</p>
+<p>
+Enganxeu els vostres textos en el camp del formulari, i feu clic sobre «Comprova el text». El corrector us mostrarà els possibles <span class="hiddenSpellError">errors ortogràfics en vermell</span>, <span class="hiddenGrammarError">errors gramaticals o tipogràfics en blau</span> i <span class="hiddenGreenError">recomanacions d'estil en verd</span>. Fent clic sobre les paraules assenyalades us mostrarà una <strong>llista de suggeriments</strong>.
+</p>
+<p>
+Aquest corrector és una ajuda en la millora de la qualitat de textos en català. Els seus resultats són orientatius i en cap cas poden usar-se com a reemplaçament d'una correcció feta per un entès.
+</p>
+
+<div class="lin5"><img src="/img/shim.gif" alt="Softcatalà" longdesc="Separador" /></div>
+
 <form name="checkform" action="http://community.languagetool.org" method="post">
-	<p id="checktextpara">
+	<p id="checktextpara" style="width:700px">
 		<textarea id="checktext" name="text" style="width: 100%" rows="6"></textarea>
 	</p>
 
-	<div style="margin-top:0px;">
+	<div style="margin-top:0px;position:relative;">
 		<input type="hidden" name="lang" value="ca"/>
 		<div style="margin-top:0px; margin-left: 30px; display:block; float: left;">
 			Formes 
@@ -57,6 +73,7 @@
 		<div style="margin-top:0px; display:block; float: right;">
 			<input type="submit" id="submit" name="_action_checkText" value="Comprova el text">
 		</div>
+		<div style="clear:both"> </div>
 	</div>
 
 </form>
