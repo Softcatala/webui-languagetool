@@ -23,7 +23,7 @@ Aquest corrector és una ajuda en la millora de la qualitat de textos en català
 
 <div class="lin5"><img src="/img/shim.gif" alt="Softcatalà" longdesc="Separador" /></div>
 
-<div id="corrector" class="ngrid90">
+<div id="corrector" class="ngrid690">
 	<form name="checkform" action="http://community.languagetool.org" method="post">
 		<p id="checktextpara">
 			<textarea id="checktext" name="text" style="width: 100%" rows="6"></textarea>
