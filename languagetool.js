@@ -36,8 +36,11 @@
 				$('#copytextarea').text($.trim(text));
 				$('#copytextarea').toggle();*/
 				clip.setText(tinymce.editors[0].core.getPlainText());
-				$('#finalitza').click();
 			});
+			
+			clip.on( 'mouseover', function ( client, args ) {
+				clip.setText(tinymce.editors[0].core.getPlainText());
+			}
 		});
 		
 		tinyMCE.init({
