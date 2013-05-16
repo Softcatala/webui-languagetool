@@ -28,7 +28,7 @@
 		
 		tinyMCE.init({
 			mode : "textareas",
-			plugins : "AtD,paste",
+			plugins : "AtD,contextmenu,paste",
 
 			//Keeps Paste Text feature active until user deselects the Paste as Text button
 			paste_text_sticky : true,
