@@ -40,7 +40,7 @@
 			
 			clip.on( 'mouseover', function ( client, args ) {
 				clip.setText(tinymce.editors[0].core.getPlainText());
-			}
+			});
 		});
 		
 		tinyMCE.init({
