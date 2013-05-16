@@ -26,11 +26,16 @@
 			});
 			
 			$('#finalitza').click(function() {
-				text = tinymce.editors[0].core.getPlainText();
+				/*text = tinymce.editors[0].core.getPlainText();
 				$('#submit').toggle();
 				$('#checktextpara').toggle();
 				$('#copytextarea').text($.trim(text));
-				$('#copytextarea').toggle();
+				$('#copytextarea').toggle();*/
+				
+			});
+			
+			var clip = new ZeroClipboard( $("finalitza"), {
+				  moviePath: "/languagetool/js/ZeroClipboard.swf"
 			});
 		});
 		
