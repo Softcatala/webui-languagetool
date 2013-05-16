@@ -24,11 +24,19 @@
 			$('#check_formes_balears').click(function() {
 				$('#opcions_valencia').hide();
 			});
+			
+			$('#finalitza').click(function() {
+				text = tinymce.editors[0].core.getPlainText();
+				$('#submit').toggle();
+				$('#checktextpara').toggle();
+				$('#copytextarea').text(text);
+				$('#copytextarea').toggle();
 		});
 		
 		tinyMCE.init({
-			mode : "textareas",
-			plugins : "AtD,contextmenu,paste",
+			mode : "specific_textareas",
+			editor_selector : "checktext"
+			plugins : "AtD,paste",
 
 			//Keeps Paste Text feature active until user deselects the Paste as Text button
 			paste_text_sticky : true,
