@@ -36,7 +36,7 @@
 		
 		tinyMCE.init({
 			mode : "specific_textareas",
-			editor_selector : "checktext",
+			editor_selector : "lt",
 			plugins : "AtD,paste",
 
 			//Keeps Paste Text feature active until user deselects the Paste as Text button
