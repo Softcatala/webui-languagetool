@@ -25,21 +25,12 @@
 				$('#opcions_valencia').hide();
 			});
 			
-			var clip = new ZeroClipboard( $("#finalitza"), {
+			var clip = new ZeroClipboard( $("#copyclip"), {
 				  moviePath: "/languagetool/js/ZeroClipboard.swf"
 			});
 			
-			$('#copyclip').click(function() {
-				/*text = tinymce.editors[0].core.getPlainText();
-				$('#submit').toggle();
-				$('#checktextpara').toggle();
-				$('#copytextarea').text($.trim(text));
-				$('#copytextarea').toggle();*/
-				clip.setText(tinymce.editors[0].core.getPlainText());
-			});
-			
 			clip.on( 'mouseover', function ( client, args ) {
-				clip.setText(tinymce.editors[0].core.getPlainText());
+				clip.setText($.trim(tinymce.editors[0].core.getPlainText()));
 			});
 		});
 		
