@@ -29,7 +29,7 @@
 				text = tinymce.editors[0].core.getPlainText();
 				$('#submit').toggle();
 				$('#checktextpara').toggle();
-				$('#copytextarea').text(text);
+				$('#copytextarea').text($.trim(text));
 				$('#copytextarea').toggle();
 			});
 		});
