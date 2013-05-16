@@ -25,7 +25,7 @@
 				$('#opcions_valencia').hide();
 			});
 			
-			var clip = new ZeroClipboard( $("finalitza"), {
+			var clip = new ZeroClipboard( $("#finalitza"), {
 				  moviePath: "/languagetool/js/ZeroClipboard.swf"
 			});
 			
