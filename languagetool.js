@@ -31,6 +31,7 @@
 				$('#checktextpara').toggle();
 				$('#copytextarea').text(text);
 				$('#copytextarea').toggle();
+			});
 		});
 		
 		tinyMCE.init({
