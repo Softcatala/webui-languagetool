@@ -25,17 +25,18 @@
 				$('#opcions_valencia').hide();
 			});
 			
-			$('#finalitza').click(function() {
+			var clip = new ZeroClipboard( $("finalitza"), {
+				  moviePath: "/languagetool/js/ZeroClipboard.swf"
+			});
+			
+			$('#copyclip').click(function() {
 				/*text = tinymce.editors[0].core.getPlainText();
 				$('#submit').toggle();
 				$('#checktextpara').toggle();
 				$('#copytextarea').text($.trim(text));
 				$('#copytextarea').toggle();*/
-				
-			});
-			
-			var clip = new ZeroClipboard( $("finalitza"), {
-				  moviePath: "/languagetool/js/ZeroClipboard.swf"
+				clip.setText(tinymce.editors[0].core.getPlainText());
+				$('#finalitza').click();
 			});
 		});
 		
