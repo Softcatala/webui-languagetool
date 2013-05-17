@@ -189,7 +189,7 @@
 			var regles_amb_radio = Array('accentuacio','incoatius','incoatius2','demostratius');
                 
             $.each(regles_amb_radio,function(index,nom) {
-				var valor = $('[type="radio"][name="'+nom+'"]').val();
+				var valor = $('[type="radio"][name="'+nom+'"]:checked').val();
 				$.setMetaCookie(nom,SC_COOKIE,valor);
 			});
          }
