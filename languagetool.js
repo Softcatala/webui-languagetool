@@ -117,7 +117,12 @@
             if($.getCookie('sc-languagetool'))
             {
                 var formes = $.getMetaCookie('formes',SC_COOKIE);
-                $('#check_'+formes).attr('checked','checked')
+                var mesopcions = $.getMetaCookie('mesopcions',SC_COOKIE);
+                
+                $('#check_'+formes).attr('checked','checked');
+                if(mesopcions) {
+                    $('#mesopcions').attr('checked','checked');
+                }
             }
          }
          
@@ -129,6 +134,10 @@
             }
             
             var formes = $("input[name=formes]:checked").val();
+            var mesopcions = $('#mesopcions').is(':checked');
             
             $.setMetaCookie('formes',SC_COOKIE,formes);
+            $.setMetaCookie('mesopcions',SC_COOKIE,mesopcions);
+            
+            
          }
