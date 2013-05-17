@@ -122,7 +122,7 @@
                 $('#check_'+formes).attr('checked','checked');
                 if(mesopcions) {
                     $('#mesopcions').attr('checked','checked');
-                    $("#mes_opcions").toggle($(this).is(':checked'));
+                    $("#mes_opcions").toggle($('#mesopcions').is(':checked'));
                 }
             }
          }
