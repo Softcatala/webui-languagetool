@@ -135,7 +135,7 @@
                 
                 var regles_amb_checkbox = Array('SE_DAVANT_SC','CA_UNPAIRED_QUESTION');
                 
-                $.each.(regles_amb_checkbox,function(index,nom) {
+                $.each(regles_amb_checkbox,function(index,nom) {
 					
 					var regla = $.getMetaCookie(value,SC_COOKIE);
 					
@@ -152,7 +152,7 @@
                 
                 var regles_amb_radio = Array('accentuacio','incoatius','incoatius2','demostratius');
                 
-                $.each.(regles_amb_radio,function(index,nom) {
+                $.each(regles_amb_radio,function(index,nom) {
 					
 					var valor = $.getMetaCookie(nom,SC_COOKIE);
 					
@@ -181,14 +181,14 @@
             
             var regles_amb_checkbox = Array('SE_DAVANT_SC','CA_UNPAIRED_QUESTION');
                 
-			$.each.(regles_amb_checkbox,function(index,nom) {
+			$.each(regles_amb_checkbox,function(index,nom) {
 				valor = $('input[name='+nom+']:checked').val();
 				$.setMetaCookie(nom,SC_COOKIE,valor);
 			});
 			
 			var regles_amb_radio = Array('accentuacio','incoatius','incoatius2','demostratius');
                 
-            $.each.(regles_amb_radio,function(index,nom) {
+            $.each(regles_amb_radio,function(index,nom) {
 				var valor = $('[type="radio"][name="'+nom+'"]').val();
 				$.setMetaCookie(nom,SC_COOKIE,valor);
 			});
