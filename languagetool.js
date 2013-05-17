@@ -117,7 +117,6 @@
             if($.getCookie('sc-languagetool'))
             {
                 var formes = $.getMetaCookie('formes',SC_COOKIE);
-                var mesopcions = $.getMetaCookie('mesopcions',SC_COOKIE);
                 
                 $('#check_'+formes).attr('checked','checked');
                 if($('#check_formes_valencianes').is(':checked'))
@@ -127,11 +126,41 @@
                     $('#opcions_valencia').hide();
                 }
                 
+                var mesopcions = $.getMetaCookie('mesopcions',SC_COOKIE);
                 if(mesopcions) 
                 {
                     $('#mesopcions').attr('checked','checked');
                     $("#mes_opcions").toggle($('#mesopcions').is(':checked'));
                 }
+                
+                var regles_amb_checkbox = array('SE_DAVANT_SC','CA_UNPAIRED_QUESTION');
+                
+                $.each.(regles_amb_checkbox,function(index,nom) {
+					
+					var regla = $.getMetaCookie(value,SC_COOKIE);
+					
+					if(regla !== undefined)
+					{
+						if(regla)
+						{
+							$('#'+nom).attr('checked','checked');
+						} else {
+							$('#'+nom).removeAttr('checked');
+						}
+					}
+				});
+                
+                var regles_amb_radio = array('accentuacio','incoatius','incoatius2','demostratius');
+                
+                $.each.(regles_amb_radio,function(index,nom) {
+					
+					var valor = $.getMetaCookie(nom,SC_COOKIE);
+					
+					if(valor !== undefined)
+					{
+						$('[type="radio"][name="'+nom+'"][value="'+valor+'"]').attr('checked','checked');
+					}
+				});
             }
          }
          
@@ -144,9 +173,23 @@
             
             var formes = $("input[name=formes]:checked").val();
             var mesopcions = $('#mesopcions').is(':checked');
+            var se_davant_sc = $('#SE_DAVANT_SC').is(':checked');
+            
             
             $.setMetaCookie('formes',SC_COOKIE,formes);
             $.setMetaCookie('mesopcions',SC_COOKIE,mesopcions);
             
-            
+            var regles_amb_checkbox = array('SE_DAVANT_SC','CA_UNPAIRED_QUESTION');
+                
+			$.each.(regles_amb_checkbox,function(index,nom) {
+				valor = $('input[name='+nom+']:checked').val();
+				$.setMetaCookie(nom,SC_COOKIE,valor);
+			});
+			
+			var regles_amb_radio = array('accentuacio','incoatius','incoatius2','demostratius');
+                
+            $.each.(regles_amb_radio,function(index,nom) {
+				var valor = $('[type="radio"][name="'+nom+'"]').val();
+				$.setMetaCookie(nom,SC_COOKIE,valor);
+			});
          }
