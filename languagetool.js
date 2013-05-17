@@ -32,6 +32,8 @@
 			clip.on( 'mouseover', function ( client, args ) {
 				clip.setText($.trim(tinymce.editors[0].core.getPlainText()));
 			});
+            
+            read_cookie_status();
 		});
 		
 		tinyMCE.init({
@@ -102,5 +104,31 @@
 			 // opcions per a les tres variants
 			 catOptions = catOptions + "," + $("input[name=SE_DAVANT_SC]:checked").val()
 									 + "," + $("input[name=CA_UNPAIRED_QUESTION]:checked").val();
-			 tinyMCE.activeEditor.execCommand('mceWritingImprovementTool', langCode, catOptions);
+			 
+             save_cookie_status();
+             
+             tinyMCE.activeEditor.execCommand('mceWritingImprovementTool', langCode, catOptions);
 		 }
+         
+         function read_cookie_status() 
+         {
+            if($.getCookie('sc-languagetool'))
+            {
+                var formes = $.getMetaCookie('formes',scCookie);
+                $('#check_'+formes).attr('checked','checked')
+            }
+         }
+         
+         function save_cookie_status()
+         {
+            var scCookie = 'sc-languagetool';
+         
+            if(!$.getCookie(scCookie))
+            {
+                $.setCookie(scCookie,'');
+            }
+            
+            var formes = $("input[name=formes]:checked").val();
+            
+            $.setMetaCookie('formes',scCookie,formes);
+         }
