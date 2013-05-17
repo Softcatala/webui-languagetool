@@ -120,7 +120,15 @@
                 var mesopcions = $.getMetaCookie('mesopcions',SC_COOKIE);
                 
                 $('#check_'+formes).attr('checked','checked');
-                if(mesopcions) {
+                if($('#check_formes_valencianes').is(':checked'))
+                {
+                    $('#opcions_valencia').show();
+                } else {
+                    $('#opcions_valencia').hide();
+                }
+                
+                if(mesopcions) 
+                {
                     $('#mesopcions').attr('checked','checked');
                     $("#mes_opcions").toggle($('#mesopcions').is(':checked'));
                 }
