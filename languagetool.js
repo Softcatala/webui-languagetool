@@ -133,7 +133,7 @@
                     $("#mes_opcions").toggle($('#mesopcions').is(':checked'));
                 }
                 
-                var regles_amb_checkbox = array('SE_DAVANT_SC','CA_UNPAIRED_QUESTION');
+                var regles_amb_checkbox = Array('SE_DAVANT_SC','CA_UNPAIRED_QUESTION');
                 
                 $.each.(regles_amb_checkbox,function(index,nom) {
 					
@@ -150,7 +150,7 @@
 					}
 				});
                 
-                var regles_amb_radio = array('accentuacio','incoatius','incoatius2','demostratius');
+                var regles_amb_radio = Array('accentuacio','incoatius','incoatius2','demostratius');
                 
                 $.each.(regles_amb_radio,function(index,nom) {
 					
@@ -179,14 +179,14 @@
             $.setMetaCookie('formes',SC_COOKIE,formes);
             $.setMetaCookie('mesopcions',SC_COOKIE,mesopcions);
             
-            var regles_amb_checkbox = array('SE_DAVANT_SC','CA_UNPAIRED_QUESTION');
+            var regles_amb_checkbox = Array('SE_DAVANT_SC','CA_UNPAIRED_QUESTION');
                 
 			$.each.(regles_amb_checkbox,function(index,nom) {
 				valor = $('input[name='+nom+']:checked').val();
 				$.setMetaCookie(nom,SC_COOKIE,valor);
 			});
 			
-			var regles_amb_radio = array('accentuacio','incoatius','incoatius2','demostratius');
+			var regles_amb_radio = Array('accentuacio','incoatius','incoatius2','demostratius');
                 
             $.each.(regles_amb_radio,function(index,nom) {
 				var valor = $('[type="radio"][name="'+nom+'"]').val();
