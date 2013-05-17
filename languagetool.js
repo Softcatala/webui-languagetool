@@ -1,4 +1,6 @@
-		$(document).ready(function() {
+		var SC_COOKIE = 'sc-languagetool';
+        
+        $(document).ready(function() {
 			$("a.fancyboxImage").fancybox({
 				'hideOnContentClick': true,
 				'titlePosition': 'inside'
@@ -89,7 +91,7 @@
 			gecko_spellcheck                   : false
 		});
 
-		 function doit() {
+         function doit() {
 			 var langCode = document.checkform.lang.value;
 			 //formes: generals/valencianes/balears
 			 var catOptions = $("input[name=formes]:checked").val(); 
@@ -114,21 +116,19 @@
          {
             if($.getCookie('sc-languagetool'))
             {
-                var formes = $.getMetaCookie('formes',scCookie);
+                var formes = $.getMetaCookie('formes',SC_COOKIE);
                 $('#check_'+formes).attr('checked','checked')
             }
          }
          
          function save_cookie_status()
          {
-            var scCookie = 'sc-languagetool';
-         
-            if(!$.getCookie(scCookie))
+            if(!$.getCookie(SC_COOKIE))
             {
-                $.setCookie(scCookie,'');
+                $.setCookie(SC_COOKIE,'');
             }
             
             var formes = $("input[name=formes]:checked").val();
             
-            $.setMetaCookie('formes',scCookie,formes);
+            $.setMetaCookie('formes',SC_COOKIE,formes);
          }
