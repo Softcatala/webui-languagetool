@@ -137,7 +137,7 @@
                 
                 $.each(regles_amb_checkbox,function(index,nom) {
 					
-					var regla = $.getMetaCookie(value,SC_COOKIE);
+					var regla = $.getMetaCookie(nom,SC_COOKIE);
 					
 					if(regla !== undefined)
 					{
