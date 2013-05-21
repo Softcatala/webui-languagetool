@@ -141,7 +141,7 @@
 					
 					if(regla !== undefined)
 					{
-						if(regla)
+						if(regla>0)
 						{
 							$('#'+nom).attr('checked','checked');
 						} else {
@@ -186,11 +186,11 @@
 				
 				if(valor)
 				{
-					$.setMetaCookie(nom,SC_COOKIE,true);
+					$.setMetaCookie(nom,SC_COOKIE,1);
 				}
 				else
 				{
-					$.setMetaCookie(nom,SC_COOKIE,false);
+					$.setMetaCookie(nom,SC_COOKIE,-1);
 				}
 			});
 			
