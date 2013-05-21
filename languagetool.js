@@ -143,7 +143,7 @@
 					{
 						if(regla>0)
 						{
-							$('#'+nom).attr('checked','checked');
+							$('input[name='+nom+']').attr('checked','checked');
 						} else {
 							$('#'+nom).removeAttr('checked');
 						}
