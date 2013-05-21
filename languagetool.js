@@ -182,11 +182,9 @@
             var regles_amb_checkbox = Array('SE_DAVANT_SC','CA_UNPAIRED_QUESTION');
                 
 			$.each(regles_amb_checkbox,function(index,nom) {
-				valor = $('input[name='+nom+']:checked').val();
+				var valor = $('input[name='+nom+']:checked').val();
 				
-				var regla = $.getMetaCookie(nom,SC_COOKIE);
-					
-				if(regla)
+				if(valor)
 				{
 					$.setMetaCookie(nom,SC_COOKIE,true);
 				}
