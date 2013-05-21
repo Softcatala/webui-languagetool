@@ -183,7 +183,17 @@
                 
 			$.each(regles_amb_checkbox,function(index,nom) {
 				valor = $('input[name='+nom+']:checked').val();
-				$.setMetaCookie(nom,SC_COOKIE,valor);
+				
+				var regla = $.getMetaCookie(nom,SC_COOKIE);
+					
+				if(regla)
+				{
+					$.setMetaCookie(nom,SC_COOKIE,true);
+				}
+				else
+				{
+					$.setMetaCookie(nom,SC_COOKIE,false);
+				}
 			});
 			
 			var regles_amb_radio = Array('accentuacio','incoatius','incoatius2','demostratius');
