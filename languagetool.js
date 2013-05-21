@@ -145,7 +145,7 @@
 						{
 							$('input[name='+nom+']').attr('checked','checked');
 						} else {
-							$('#'+nom).removeAttr('checked');
+							$('input[name='+nom+']').removeAttr('checked');
 						}
 					}
 				});
