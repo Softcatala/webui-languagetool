@@ -506,9 +506,9 @@ AtDCore.prototype.isIE = function() {
          editor.onClick.add(plugin._showMenu, plugin);
 
          /* comment this in and comment out the line below to get the browser's standard context menu on right click: */
-         //editor.onContextMenu.add(plugin._showMenu, plugin);
+         editor.onContextMenu.add(plugin._showMenu, plugin);
          // without this, the context menu opens but nothing in it can be selected:
-         editor.onContextMenu.add(plugin._doNotShowMenu, plugin);
+         //editor.onContextMenu.add(plugin._doNotShowMenu, plugin);
 
          /* strip out the markup before the contents is serialized (and do it on a copy of the markup so we don't affect the user experience) */
          editor.onPreProcess.add(function(sender, object) 
