@@ -77,6 +77,7 @@
 			/* edit this file to customize how LanguageTool shows errors: */
 			languagetool_css_url                 : "/languagetool/online-check/tiny_mce/plugins/atd-tinymce/css/content.css",
 			/* this stuff is a matter of preference: */
+			height                             : 300,
 			theme                              : "advanced",
 			theme_advanced_buttons1            : "",
 			theme_advanced_buttons2            : "",
