@@ -309,7 +309,7 @@
 
                for (var i = 0; i < errorDescription["suggestions"].length; i++)
                {
-                  if (i >= 5) {
+                  if (i >= 8) { //max number of suggestions shown
                       break;
                   }
                   (function(sugg)
