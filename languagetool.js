@@ -1,5 +1,6 @@
 		var SC_COOKIE = 'sc-languagetool';
         
+        (function($){
         $(document).ready(function() {
 			$("a.fancyboxImage").fancybox({
 				'hideOnContentClick': true,
@@ -203,3 +204,4 @@
 				$.setMetaCookie(nom,SC_COOKIE,valor);
 			});
          }
+	 }(jQuery));
