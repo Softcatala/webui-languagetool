@@ -95,6 +95,12 @@
 		});
 
          function doit() {
+	     if (tinyMCE.activeEditor.getContent().length>20000)                
+             {                                                              
+		 var errorMsg="Heu superat el l\u00EDmit de 20.000 car\u00E0cters.";                                   alert(errorMsg);                                           
+             }                                                              
+             else                                                               
+             {  
 			 var langCode = document.checkform.lang.value;
 			 //formes: generals/valencianes/balears
 			 var catOptions = $("input[name=formes]:checked").val(); 
@@ -113,7 +119,8 @@
              save_cookie_status();
              
              tinyMCE.activeEditor.execCommand('mceWritingImprovementTool', langCode, catOptions);
-		 }
+		}
+	 }
          
          function read_cookie_status() 
          {
