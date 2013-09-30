@@ -238,6 +238,9 @@ AtDCore.prototype._getPlainText = function(removeCursor) {
             .replace(/<br>/g, "\n")
             .replace(/<br\s*\/>/g, "\n")
             .replace(/<.*?>/g, "")
+            .replace(/&amp;/g, "&")
+            .replace(/&lt;/g, "<")
+            //.replace(/&gt;/g, ">")  // TODO: using '>' still gets converted to '&gt;' for the user - with this line the HTML gets messed up somtimes
             .replace(/&nbsp;/g, " ");  // for Chrome - no idea where this comes from
     if (removeCursor) {
         plainText = plainText.replace(/\ufeff/g, "");  // feff = 65279 = cursor code
@@ -847,9 +850,10 @@ AtDCore.prototype.isIE = function() {
             url          : url + "/" + file,
             content_type : 'text/xml',
             type         : "POST",
-            data         : "text=" + encodeURI(data).replace(/&/g, '%26')
+            data         : "text=" + encodeURI(data).replace(/&/g, '%26').replace(/\+/g, '%2B')
                            + "&language=" + encodeURI(languageCode)
-                           + "&enabled=" + enable + "&disabled=" + disable,
+                           + "&enabled=" + enable 
+                           + "&disabled=WHITESPACE_RULE," + disable,
             async        : true,
             success      : success,
             error        : function( type, req, o )
