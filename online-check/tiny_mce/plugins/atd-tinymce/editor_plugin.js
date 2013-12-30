@@ -787,7 +787,7 @@ AtDCore.prototype.isIE = function() {
 		 else if (catOptions.indexOf("formes_valencianes")>=0)
 		 {
 				enable = "EXIGEIX_VERBS_VALENCIANS,EXIGEIX_POSSESSIUS_U";
-				disable = "EXIGEIX_VERBS_CENTRAL,EVITA_DEMOSTRATIUS_EIXE";
+				disable = "EXIGEIX_VERBS_CENTRAL,EVITA_DEMOSTRATIUS_EIXE,EXIGEIX_POSSESSIUS_V";
 				 
 				//opcions dins de les formes valencianes
 				if (catOptions.indexOf("accentuacio_valenciana")>=0)
