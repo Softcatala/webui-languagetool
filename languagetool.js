@@ -55,17 +55,21 @@ var SC_COOKIE = 'sc-languagetool';
 
     /* translations: */
     languagetool_i18n_no_errors: {
-      'ca': 'No s\'ha trobat cap error'
+       'ca': 'No s\'ha trobat cap error',
+       'ca-ES-valencia': 'No s\'ha trobat cap error'
     },
     languagetool_i18n_explain: {
       // "Explain..." - shown if there's an URL with a more detailed description:
-      'ca': 'Més informació…'
+      'ca': 'Més informació…',
+      'ca-ES-valencia': 'Més informació…'
     },
     languagetool_i18n_ignore_once: {
-      'ca': 'Ignora el suggeriment'
+      'ca': 'Ignora el suggeriment',
+      'ca-ES-valencia': 'Ignora el suggeriment'
     },
     languagetool_i18n_ignore_all: {
-      'ca': 'Ignora aquesta classe d\'errors'
+      'ca': 'Ignora aquesta classe d\'errors',
+      'ca-ES-valencia': 'Ignora aquesta classe d\'errors'
     },
 
     languagetool_i18n_current_lang: function() {
@@ -103,14 +107,19 @@ var SC_COOKIE = 'sc-languagetool';
       //opcions dins formes valencianes
       if (catOptions == "formes_valencianes") {
         langCode = "ca-ES-valencia";
-        catOptions = catOptions + "," + $("input[name=accentuacio]:checked").val() + "," + $("input[name=incoatius]:checked").val() + "," + $("input[name=incoatius2]:checked").val() + "," + $("input[name=demostratius]:checked").val();
+        catOptions = catOptions + "," + $("input[name=accentuacio]:checked")
+          .val() + "," + $("input[name=incoatius]:checked").val() + "," + $(
+            "input[name=incoatius2]:checked").val() + "," + $(
+            "input[name=demostratius]:checked").val();
       }
       // opcions per a les tres variants
-      catOptions = catOptions + "," + $("input[name=SE_DAVANT_SC]:checked").val() + "," + $("input[name=CA_UNPAIRED_QUESTION]:checked").val();
+      catOptions = catOptions + "," + $("input[name=SE_DAVANT_SC]:checked")
+        .val() + "," + $("input[name=CA_UNPAIRED_QUESTION]:checked").val();
 
       save_cookie_status();
 
-      tinyMCE.activeEditor.execCommand('mceWritingImprovementTool', langCode, catOptions);
+      tinyMCE.activeEditor.execCommand('mceWritingImprovementTool',
+        langCode, catOptions);
     }
   }
 
@@ -131,7 +140,8 @@ var SC_COOKIE = 'sc-languagetool';
         $("#mes_opcions").toggle($('#mesopcions').is(':checked'));
       }
 
-      var regles_amb_checkbox = Array('SE_DAVANT_SC', 'CA_UNPAIRED_QUESTION');
+      var regles_amb_checkbox = Array('SE_DAVANT_SC',
+        'CA_UNPAIRED_QUESTION');
 
       $.each(regles_amb_checkbox, function(index, nom) {
 
@@ -146,14 +156,16 @@ var SC_COOKIE = 'sc-languagetool';
         }
       });
 
-      var regles_amb_radio = Array('accentuacio', 'incoatius', 'incoatius2', 'demostratius');
+      var regles_amb_radio = Array('accentuacio', 'incoatius', 'incoatius2',
+        'demostratius');
 
       $.each(regles_amb_radio, function(index, nom) {
 
         var valor = $.getMetaCookie(nom, SC_COOKIE);
 
         if (valor !== undefined) {
-          $('[type="radio"][name="' + nom + '"][value="' + valor + '"]').attr('checked', 'checked');
+          $('[type="radio"][name="' + nom + '"][value="' + valor + '"]')
+            .attr('checked', 'checked');
         }
       });
     }
@@ -184,7 +196,8 @@ var SC_COOKIE = 'sc-languagetool';
       }
     });
 
-    var regles_amb_radio = Array('accentuacio', 'incoatius', 'incoatius2', 'demostratius');
+    var regles_amb_radio = Array('accentuacio', 'incoatius', 'incoatius2',
+      'demostratius');
 
     $.each(regles_amb_radio, function(index, nom) {
       var valor = $('[type="radio"][name="' + nom + '"]:checked').val();
