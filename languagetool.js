@@ -95,9 +95,10 @@
 		});
 
          function doit() {
-	     if (tinyMCE.activeEditor.getContent().length>20000)                
+	     if (tinyMCE.activeEditor.getContent().length>30000)                
              {                                                              
-		 var errorMsg="Heu superat el l\u00EDmit de 20.000 car\u00E0cters.";                                   alert(errorMsg);                                           
+		 var errorMsg="Heu superat el l\u00EDmit de 30.000 car\u00E0cters.";
+		 alert(errorMsg);                                           
              }                                                              
              else                                                               
              {  
@@ -107,10 +108,11 @@
 			 //opcions dins formes valencianes
 			 if (catOptions == "formes_valencianes") 
 			 {
-				catOptions = catOptions + "," + $("input[name=accentuacio]:checked").val()
-										+  "," + $("input[name=incoatius]:checked").val()
-										+  "," + $("input[name=incoatius2]:checked").val()
-										+  "," + $("input[name=demostratius]:checked").val(); 
+			     langCode = "ca-ES-valencia";
+			     catOptions = catOptions + "," + $("input[name=accentuacio]:checked").val()
+				 +  "," + $("input[name=incoatius]:checked").val()
+				 +  "," + $("input[name=incoatius2]:checked").val()
+				 +  "," + $("input[name=demostratius]:checked").val(); 
 			 }
 			 // opcions per a les tres variants
 			 catOptions = catOptions + "," + $("input[name=SE_DAVANT_SC]:checked").val()
