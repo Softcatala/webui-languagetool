@@ -97,8 +97,8 @@ var SC_COOKIE = 'sc-languagetool';
   });
 
   function doit() {
-    if (tinyMCE.activeEditor.getContent().length > 30000) {
-      var errorMsg = "Heu superat el l\u00EDmit de 30.000 car\u00E0cters.";
+    if (tinyMCE.activeEditor.getContent().length > 50000) {
+      var errorMsg = "Heu superat el l\u00EDmit de 50.000 car\u00E0cters.";
       alert(errorMsg);
     } else {
       var langCode = document.checkform.lang.value;
