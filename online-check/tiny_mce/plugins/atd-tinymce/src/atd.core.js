@@ -77,6 +77,7 @@ AtDCore.prototype.processXML = function(responseXML) {
        suggestion["errorlength"] = errorLength;
        suggestion["type"]        = errors[i].getAttribute("category");
        suggestion["ruleid"]      = errors[i].getAttribute("ruleId");
+       suggestion["locqualityissuetype"] = errors[i].getAttribute("locqualityissuetype");
        var url = errors[i].getAttribute("url");
        if (url) {
            suggestion["moreinfo"] = url;
@@ -143,9 +144,13 @@ AtDCore.prototype.markMyWords = function() {
             previousSpanStart = spanStart;
             
             var ruleId = suggestion.ruleid;
+            var locqualityissuetype = suggestion.locqualityissuetype;
             var cssName;
-            if (ruleId.indexOf("SPELLER_RULE") >= 0 || ruleId.indexOf("MORFOLOGIK_RULE") == 0 || ruleId == "HUNSPELL_NO_SUGGEST_RULE" || ruleId == "HUNSPELL_RULE") {
+            if (locqualityissuetype == "misspelling") {
                 cssName = "hiddenSpellError";
+            }
+            else if (locqualityissuetype == "style" || locqualityissuetype == "locale-violation") {
+                cssName = "hiddenGreenError";
             }
             else {
                 cssName = "hiddenGrammarError";
@@ -233,6 +238,9 @@ AtDCore.prototype._getPlainText = function(removeCursor) {
             .replace(/<br>/g, "\n")
             .replace(/<br\s*\/>/g, "\n")
             .replace(/<.*?>/g, "")
+            .replace(/&amp;/g, "&")
+            .replace(/&lt;/g, "<")
+            //.replace(/&gt;/g, ">")  // TODO: using '>' still gets converted to '&gt;' for the user - with this line the HTML gets messed up somtimes
             .replace(/&nbsp;/g, " ");  // for Chrome - no idea where this comes from
     if (removeCursor) {
         plainText = plainText.replace(/\ufeff/g, "");  // feff = 65279 = cursor code
@@ -286,7 +294,7 @@ AtDCore.prototype.isEmptySpan = function(node) {
 };
 
 AtDCore.prototype.isMarkedNode = function(node) {
-    return (this.hasClass(node, 'hiddenGrammarError') || this.hasClass(node, 'hiddenSpellError') || this.hasClass(node, 'hiddenSuggestion'));
+    return (this.hasClass(node, 'hiddenGrammarError') || this.hasClass(node, 'hiddenGreenError') || this.hasClass(node, 'hiddenSpellError') || this.hasClass(node, 'hiddenSuggestion'));
 };
 
 /*

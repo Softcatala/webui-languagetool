@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # combine source files into a single JS file
 
 cat src/atd.core.js src/editor_plugin.js >editor_plugin.js
