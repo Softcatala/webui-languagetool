@@ -71,6 +71,26 @@ var SC_COOKIE = 'sc-languagetool';
       'ca': 'Ignora aquesta classe d\'errors',
       'ca-ES-valencia': 'Ignora aquesta classe d\'errors'
     },
+    languagetool_i18n_rule_implementation :
+    {
+      // "Rule implementation":
+	'ca': 'Informació sobre la regla...',
+	'ca-ES-valencia': 'Informació sobre la regla...',
+    },
+    languagetool_i18n_suggest_word :
+    {
+    // "Suggest word for dictionary...": 
+    // *** Also set languagetool_i18n_suggest_word_url below if you set this ***
+	'ca': 'Suggereix un mot per al diccionari...',
+	'ca-ES-valencia': 'Suggereix un mot per al diccionari...'
+    },
+    languagetool_i18n_suggest_word_url :
+    {
+    // "Suggest word for dictionary...":
+	'ca': 'http://community.languagetool.org/suggestion?word={word}&lang=ca',
+	'ca-ES-valencia': 'http://community.languagetool.org/suggestion?word={word}&lang=ca'
+     },
+
 
     languagetool_i18n_current_lang: function() {
       return document.checkform.lang.value;
