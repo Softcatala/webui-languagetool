@@ -329,10 +329,34 @@
             }
              
             var lang = plugin.editor.getParam('languagetool_i18n_current_lang')();
-            var explainText = plugin.editor.getParam('languagetool_i18n_explain')[lang] || "No errors were found.";
+            var explainText = plugin.editor.getParam('languagetool_i18n_explain')[lang] || "Explain...";
             var ignoreThisText = plugin.editor.getParam('languagetool_i18n_ignore_once')[lang] || "Ignore this error";
-            var ignoreThisKindOfErrorText = plugin.editor.getParam('languagetool_i18n_ignore_all')[lang] || "Ignore this kind of error";
-             
+            var ruleImplementation = "Rule implementation";
+            if (plugin.editor.getParam('languagetool_i18n_rule_implementation')) {
+              ruleImplementation = plugin.editor.getParam('languagetool_i18n_rule_implementation')[lang] || "Rule implementation";
+            }
+            var suggestWord = "Suggest word for dictionary...";
+            if (plugin.editor.getParam('languagetool_i18n_suggest_word')) {
+              suggestWord = plugin.editor.getParam('languagetool_i18n_suggest_word')[lang] || "Suggest word for dictionary...";
+            }
+            var suggestWordUrl;
+            if (plugin.editor.getParam('languagetool_i18n_suggest_word_url')) {
+              suggestWordUrl = plugin.editor.getParam('languagetool_i18n_suggest_word_url')[lang];
+            }
+            if (suggestWord && suggestWordUrl) {
+              var newUrl = suggestWordUrl.replace(/{word}/, encodeURIComponent(errorDescription['coveredtext']));
+              (function(url)
+              {
+                m.add({
+                  title : suggestWord,
+                  onclick : function() { window.open(newUrl, '_suggestWord'); }
+                });
+              })(errorDescription[suggestWord]);
+              m.addSeparator();
+            }
+
+            //var ignoreThisKindOfErrorText = plugin.editor.getParam('languagetool_i18n_ignore_all')[lang] || "Ignore this kind of error";
+            
             if (errorDescription != undefined && errorDescription["moreinfo"] != null)
             {
                (function(url)
@@ -342,7 +366,6 @@
                      onclick : function() { window.open(url, '_errorExplain'); }
                   });
                })(errorDescription["moreinfo"]);
-
                m.addSeparator();
             }
 
@@ -354,8 +377,21 @@
                   t._checkDone();
                }
             });
-
+           
+            var langCode = $('#lang').val();
+            // NOTE: this link won't work (as of March 2014) for false friend rules:
+            var ruleUrl = "http://community.languagetool.org/rule/show/" +
+              encodeURI(errorDescription["id"]) + "?";
+            if (errorDescription["subid"] && errorDescription["subid"] != 'null') {
+              ruleUrl += "subId=" + encodeURI(errorDescription["subid"]) + "&";
+            }
+            ruleUrl += "lang=" + encodeURI(langCode);
             m.add({
+               title : ruleImplementation,
+               onclick : function() { window.open(ruleUrl, '_blank'); }
+            });
+
+            /*m.add({
               title : ignoreThisKindOfErrorText,
               onclick : function() 
               {
@@ -364,7 +400,7 @@
                  t._removeWordsByRuleId(ruleId);
                  t._checkDone();
               }
-           });
+           });*/
 
            /* show the menu please */
            ed.selection.select(e.target);
