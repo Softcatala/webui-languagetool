@@ -343,7 +343,9 @@
             if (plugin.editor.getParam('languagetool_i18n_suggest_word_url')) {
               suggestWordUrl = plugin.editor.getParam('languagetool_i18n_suggest_word_url')[lang];
             }
-            if (suggestWord && suggestWordUrl) {
+            var ruleId = errorDescription["id"];
+            var isSpellingRule = ruleId.indexOf("MORFOLOGIK_RULE") != -1 || ruleId.indexOf("SPELLER_RULE") != -1;
+            if (suggestWord && suggestWordUrl && isSpellingRule) {
               var newUrl = suggestWordUrl.replace(/{word}/, encodeURIComponent(errorDescription['coveredtext']));
               (function(url)
               {
@@ -378,7 +380,7 @@
                }
             });
            
-            var langCode = $('#lang').val();
+            var langCode = lang; //$('#lang').val();
             // NOTE: this link won't work (as of March 2014) for false friend rules:
             var ruleUrl = "http://community.languagetool.org/rule/show/" +
               encodeURI(errorDescription["id"]) + "?";

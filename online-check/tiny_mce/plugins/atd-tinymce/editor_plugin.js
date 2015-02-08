@@ -77,6 +77,7 @@ AtDCore.prototype.processXML = function(responseXML) {
        suggestion["errorlength"] = errorLength;
        suggestion["type"]        = errors[i].getAttribute("category");
        suggestion["ruleid"]      = errors[i].getAttribute("ruleId");
+       suggestion["subid"]      = errors[i].getAttribute("subId");
        suggestion["locqualityissuetype"] = errors[i].getAttribute("locqualityissuetype");
        var url = errors[i].getAttribute("url");
        if (url) {
@@ -161,7 +162,7 @@ AtDCore.prototype.markMyWords = function() {
             var delim = this.surrogateAttributeDelimiter;
             var coveredText = newText.substring(spanStart, spanEnd);
             var metaInfo = ruleId + delim + suggestion.subid + delim + suggestion.description + delim + suggestion.suggestions + delim + coveredText;
-            var metaInfo = ruleId + delim + suggestion.description + delim + suggestion.suggestions;
+	    //            var metaInfo = ruleId + delim + suggestion.description + delim + suggestion.suggestions;
             if (suggestion.moreinfo) {
                 metaInfo += delim + suggestion.moreinfo;
             }
@@ -681,7 +682,9 @@ AtDCore.prototype.isIE = function() {
             if (plugin.editor.getParam('languagetool_i18n_suggest_word_url')) {
               suggestWordUrl = plugin.editor.getParam('languagetool_i18n_suggest_word_url')[lang];
             }
-            if (suggestWord && suggestWordUrl) {
+            var ruleId = errorDescription["id"];
+            var isSpellingRule = ruleId.indexOf("MORFOLOGIK_RULE") != -1 || ruleId.indexOf("SPELLER_RULE") != -1;
+            if (suggestWord && suggestWordUrl && isSpellingRule) {
               var newUrl = suggestWordUrl.replace(/{word}/, encodeURIComponent(errorDescription['coveredtext']));
               (function(url)
               {
@@ -716,7 +719,7 @@ AtDCore.prototype.isIE = function() {
                }
             });
            
-            var langCode = $('#lang').val();
+            var langCode = lang; //$('#lang').val();
             // NOTE: this link won't work (as of March 2014) for false friend rules:
             var ruleUrl = "http://community.languagetool.org/rule/show/" +
               encodeURI(errorDescription["id"]) + "?";

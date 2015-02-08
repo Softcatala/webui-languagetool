@@ -77,6 +77,7 @@ AtDCore.prototype.processXML = function(responseXML) {
        suggestion["errorlength"] = errorLength;
        suggestion["type"]        = errors[i].getAttribute("category");
        suggestion["ruleid"]      = errors[i].getAttribute("ruleId");
+       suggestion["subid"]      = errors[i].getAttribute("subId");
        suggestion["locqualityissuetype"] = errors[i].getAttribute("locqualityissuetype");
        var url = errors[i].getAttribute("url");
        if (url) {
@@ -161,7 +162,7 @@ AtDCore.prototype.markMyWords = function() {
             var delim = this.surrogateAttributeDelimiter;
             var coveredText = newText.substring(spanStart, spanEnd);
             var metaInfo = ruleId + delim + suggestion.subid + delim + suggestion.description + delim + suggestion.suggestions + delim + coveredText;
-            var metaInfo = ruleId + delim + suggestion.description + delim + suggestion.suggestions;
+	    //            var metaInfo = ruleId + delim + suggestion.description + delim + suggestion.suggestions;
             if (suggestion.moreinfo) {
                 metaInfo += delim + suggestion.moreinfo;
             }
