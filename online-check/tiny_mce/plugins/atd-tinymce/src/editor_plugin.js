@@ -379,8 +379,8 @@
                   t._checkDone();
                }
             });
-           
-            var langCode = lang; //$('#lang').val();
+	    /*
+	    var langCode = lang; //$('#lang').val();
             // NOTE: this link won't work (as of March 2014) for false friend rules:
             var ruleUrl = "http://community.languagetool.org/rule/show/" +
               encodeURI(errorDescription["id"]) + "?";
@@ -391,8 +391,8 @@
             m.add({
                title : ruleImplementation,
                onclick : function() { window.open(ruleUrl, '_blank'); }
-            });
-
+	       });
+	    */
             /*m.add({
               title : ignoreThisKindOfErrorText,
               onclick : function() 
