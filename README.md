@@ -1,3 +1,5 @@
+![Obsolet](https://img.shields.io/badge/softcatal%C3%A0-obsolet-red.svg)
+
 webui-languagetool
 ==================
 
